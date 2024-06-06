@@ -6,7 +6,10 @@ export default {
 </script>
 
 <template>
-    ciao
+    <div>
+        <input type="text" placeholder="cerca un film">
+        <button>cerca</button>
+    </div>
 </template>
 
 <style ></style>
