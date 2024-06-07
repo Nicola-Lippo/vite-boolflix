@@ -1,8 +1,10 @@
 import { reactive } from 'vue';
 
 export const store = reactive({
-    //array di risultati
+    //array di risultati per film
     movies: [],
+    //array di risultati per serieTv
+    series: [],
     //salvo url delll api per la chiamata
     apiUrl: 'https://api.themoviedb.org/3',
     //salvo la mia key che necessita il sito per la chiamata

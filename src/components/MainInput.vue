@@ -12,7 +12,7 @@ export default {
     methods: {
         searchResults() {
             console.log('ho premuto cerca')
-            //chiamata api dentro la funzione
+            //chiamata api per film dentro la funzione
             //salvo il link chiamata in una variabile
             const url = this.store.apiUrl + this.store.endpoints.movie;
             console.log(url)
@@ -31,10 +31,28 @@ export default {
                     console.log(response.data.results);
                     this.store.movies = response.data.results;
                 })
+            //chiamata api per serieTV dentro la funzione
+            const serie = this.store.apiUrl + this.store.endpoints.serie;
+            console.log(serie)
+            /*Passo il primo argomento alla chiamata l'url, poi passo un secondo argomento(oggetto) PARAMS
+            composto da chiave e valori key: valore */
+            axios.get(serie, {
+                params: {
+                    api_key: this.store.apiKey,
+                    language: this.store.lenguageKey,
+                    query: this.store.searchKey,
+                }
+            })
+                .then((response) => {
+                    console.log(response.data.results);
+                    this.store.series = response.data.results;
+                })
 
         },
-    }
+
+    },
 };
+
 
 </script>
 
