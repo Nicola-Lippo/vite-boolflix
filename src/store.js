@@ -1,9 +1,19 @@
 import { reactive } from 'vue';
 
 export const store = reactive({
-    results: [],
+    //array di risultati
+    movies: [],
     //salvo url delll api per la chiamata
-    apiUrl: 'https://developers.themoviedb.org/3/search/movie',
+    apiUrl: 'https://developers.themoviedb.org/3',
     //salvo la mia key che necessita il sito per la chiamata
-    apiKey: '?api_key=e7b79990a7764cfac4f7e950e7117525',
+    apiKey: 'e7b79990a7764cfac4f7e950e7117525',
+    //chiave di ricerca
+    searchKey: '',
+    //chiave per la lingua
+    lenguageKey: 'it-IT',
+    //differente parte dell url per chiamre 2 cose diverse
+    endpoints: {
+        movie: '/search/movie',
+        serie: '/search/tv',
+    },
 });
