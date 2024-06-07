@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { store } from '../store'
 export default {
-    name: 'AppMain',
+    name: 'MainSearch',
     //data è un metodo che restituisce un oggetto
     data() {
         return {
@@ -44,17 +44,6 @@ export default {
         <!--collegata al file store con v-model -->
         <input type="text" placeholder="cerca un film" v-model="store.searchKey">
         <button @click="searchResults">cerca</button>
-    </div>
-    <!--lista elenchi risultati filtrati -->
-    <div>
-        <ul>
-            <li v-for="film in store.movies">
-                <div>{{ film.title }}</div>
-                <div>{{ film.original_title }}</div>
-                <div>{{ film.original_language }}</div>
-                <div>{{ film.vote_average }}</div>
-            </li>
-        </ul>
     </div>
 </template>
 

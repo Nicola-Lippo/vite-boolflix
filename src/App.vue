@@ -1,6 +1,7 @@
 <script >
 import axios from 'axios';
-import AppMain from './components/AppMain.vue';
+import MainSearch from './components/MainSearch.vue';
+import MainList from './components/MainList.vue';
 import { store } from './store'
 
 export default {
@@ -11,14 +12,16 @@ export default {
     };
   },
   components: {
-    AppMain
+    MainSearch,
+    MainList
   },
 };
 
 </script>
 
 <template>
-  <AppMain />
+  <MainSearch />
+  <MainList />
 </template>
 
 <style ></style>
