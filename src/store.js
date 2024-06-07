@@ -7,7 +7,7 @@ export const store = reactive({
     apiUrl: 'https://developers.themoviedb.org/3',
     //salvo la mia key che necessita il sito per la chiamata
     apiKey: 'e7b79990a7764cfac4f7e950e7117525',
-    //chiave di ricerca
+    //chiave di ricerca collegata v-model
     searchKey: '',
     //chiave per la lingua
     lenguageKey: 'it-IT',
