@@ -16,13 +16,21 @@ export default {
             //salvo il link chiamata in una variabile
             const url = this.store.apiUrl + this.store.endpoints.movie;
             console.log(url)
+            /*Passo il primo argomento alla chiamata l'url, poi passo un secondo argomento(oggetto) PARAMS
+            composto da chiave e valori key: valore */
             axios.get(url, {
                 params: {
                     api_key: this.store.apiKey,
+                    language: this.store.lenguageKey,
                     query: this.store.searchKey,
                 }
             })
-                .then((response) => console.log(response))
+                //aggiungo le {} perchè devo fare più operazioni
+                //l' operazione va fatta dentro il then perchè fuori non abbiamo quei dati
+                .then((response) => {
+                    console.log(response.data.results);
+                    this.store.movies = response.data.results;
+                })
 
         },
     }
@@ -40,11 +48,11 @@ export default {
     <!--lista elenchi risultati filtrati -->
     <div>
         <ul>
-            <li id="qui faro il ciclo v-for">
-                <div>titolo</div>
-                <div>titolo originale</div>
-                <div>lingua</div>
-                <div>voto</div>
+            <li v-for="film in store.movies">
+                <div>{{ film.title }}</div>
+                <div>{{ film.original_title }}</div>
+                <div>{{ film.original_language }}</div>
+                <div>{{ film.vote_average }}</div>
             </li>
         </ul>
     </div>
