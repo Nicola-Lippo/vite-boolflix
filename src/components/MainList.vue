@@ -1,5 +1,4 @@
 <script >
-import axios from 'axios';
 import { store } from '../store'
 export default {
     name: 'MainList',
@@ -20,7 +19,15 @@ export default {
             <li v-for="film in store.movies">
                 <div>{{ film.title }}</div>
                 <div>{{ film.original_title }}</div>
-                <div>{{ film.original_language }}</div>
+                <div>
+                    <p v-if="film.original_language === 'it'">
+                        <img src="../assets/img/Flag_of_Italy.png" alt="flag">
+                    </p>
+                    <p v-else-if="film.original_language === 'en'">
+                        <img src="../assets/img/Flag_of_the_United_Kingdom.png" alt="flag">
+                    </p>
+                    <p v-else>{{ film.original_language }}</p>
+                </div>
                 <div>{{ film.vote_average }}</div>
                 <hr>
             </li>
@@ -28,4 +35,8 @@ export default {
     </div>
 </template>
 
-<style ></style>
+<style scoped>
+img {
+    width: 30px;
+}
+</style>

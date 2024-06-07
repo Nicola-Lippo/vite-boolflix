@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { store } from '../store'
 export default {
-    name: 'MainSearch',
+    name: 'MainInput',
     //data è un metodo che restituisce un oggetto
     data() {
         return {

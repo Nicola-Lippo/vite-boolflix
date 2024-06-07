@@ -1,6 +1,5 @@
 <script >
-import axios from 'axios';
-import MainSearch from './components/MainSearch.vue';
+import MainInput from './components/MainInput.vue';
 import MainList from './components/MainList.vue';
 import { store } from './store'
 
@@ -12,7 +11,7 @@ export default {
     };
   },
   components: {
-    MainSearch,
+    MainInput,
     MainList
   },
 };
@@ -20,7 +19,7 @@ export default {
 </script>
 
 <template>
-  <MainSearch />
+  <MainInput />
   <MainList />
 </template>
 
